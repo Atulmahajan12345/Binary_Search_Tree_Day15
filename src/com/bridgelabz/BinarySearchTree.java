@@ -2,6 +2,7 @@ package com.bridgelabz;
 
 public class BinarySearchTree {
 	Node root;
+	static boolean flag = true;
 
 	public void insert(int data) {
 		Node node = new Node(data);
@@ -12,6 +13,7 @@ public class BinarySearchTree {
 		if (root == null) {
 			root = node;
 			return;
+
 		} else {
 			Node parent = root;
 			Node current = root;
@@ -42,4 +44,24 @@ public class BinarySearchTree {
 			inorderDisplay(node.right);
 		}
 	}
+
+	public void searchNode(Node node, int value) {
+
+		if (root == null)
+			System.out.println("Tree is empty");
+		else {
+
+			if (node.data == value) {
+				flag = true;
+				return;
+			}
+			if (flag == false && node.left != null) {
+				searchNode(node.left, value);
+			}
+			if (flag == false && node.right != null) {
+				searchNode(node.right, value);
+			}
+		}
+	}
+
 }
