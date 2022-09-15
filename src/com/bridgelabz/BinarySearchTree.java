@@ -1,8 +1,8 @@
 package com.bridgelabz;
 
 public class BinarySearchTree {
-Node root;
-	
+	Node root;
+
 	public void insert(int data) {
 		Node node = new Node(data);
 		node.data = data;
@@ -35,7 +35,7 @@ Node root;
 		if (node.left != null) {
 			inorderDisplay(node.left);
 		}
-		
+
 		System.out.print(node.data + " ");
 
 		if (node.right != null) {
@@ -43,5 +43,3 @@ Node root;
 		}
 	}
 }
-
-
